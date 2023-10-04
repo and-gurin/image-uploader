@@ -66,9 +66,12 @@ const DragDrop = () => {
 
 
     return (<>
-        {serverImage ? <UploadComplete link={serverImage} onClickCopyLink={onClickCopyLink}/>
-            : isLoading ? <ProgressBar label="Loading…" isIndeterminate />
-                : <BeforeUpload handleDrop={handleDrop}/>
+            {serverImage ? <UploadComplete link={serverImage} onClickCopyLink={onClickCopyLink}/>
+                : isLoading
+                    ? <div className="loading">
+                        <ProgressBar label="Uploading…" isIndeterminate/>
+                    </div>
+                    : <BeforeUpload handleDrop={handleDrop}/>
         }
         </>
     )
