@@ -37,7 +37,7 @@ const DragDrop = () => {
             data.append('serverImage', image);
 
             await axios
-                .post('https://image-uploader.cyclic.cloud/api/upload', data, {
+                .post('https://image-uploader-hij7.onrender.com/api/upload', data, {
                     headers: {
                         'content-type': 'multipart/form-data',
                     },
