@@ -36,13 +36,15 @@ const DragDrop = () => {
             const data = new FormData();
             data.append('serverImage', image);
 
+            setIsLoading(true);
+
             await axios
                 .post('https://image-uploader-hij7.onrender.com/api/upload', data, {
                     headers: {
                         'content-type': 'multipart/form-data',
                     },
                 })
-                .then((res) => setServerImage(res.data.path))
+                .then((res) => setServerImage(`https://image-uploader-hij7.onrender.com/${res.data.path}`))
                 .then(() => {
                     setIsLoading(false);
                 });
