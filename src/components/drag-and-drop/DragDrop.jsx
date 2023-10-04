@@ -37,7 +37,7 @@ const DragDrop = () => {
             data.append('serverImage', image);
 
             await axios
-                .post('https://weak-gold-harp-seal-hose.cyclic.cloud/api/upload', data, {
+                .post('https://image-uploader.cyclic.cloud/api/upload', data, {
                     headers: {
                         'content-type': 'multipart/form-data',
                     },
